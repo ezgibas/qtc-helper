@@ -1,0 +1,60 @@
+/* 3d button reference code: https://codepen.io/kathykato/pen/gOOjgmP */
+button {
+    --text: #382b22;
+    --light-blue: #dbeeff;
+    --blue: #c0e0fc;
+    --dark-blue: #84b6e3;
+    --blue-border: #1576cf;
+    --blue-shadow: #b8c7e0;
+}
+
+.button {
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: black;
+    justify-content: center;
+    height: 75px;
+    width: 175px;
+    margin: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: var(--light-blue);
+    border: 2px solid #1576cf;
+    border-radius: 0.5em;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--dark-blue);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--blue-border), 0 0.625em 0 0 var(--blue-shadow);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.button:hover {
+    background: var(--blue);
+    transform: translate(0, 0.25em);
+}
+.button:hover::before {
+    box-shadow: 0 0 0 2px var(--blue-border), 0 0.5em 0 0 var(--blue-shadow);
+    transform: translate3d(0, 0.5em, -1em);
+}
+.button:active {
+    background: var(--blue);
+    transform: translate(0em, 0.75em);
+}
+.button:active::before {
+    box-shadow: 0 0 0 2px var(--blue-border), 0 0 var(--blue-shadow);
+    transform: translate3d(0, 0, -1em);
+}
