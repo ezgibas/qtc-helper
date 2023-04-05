@@ -8,11 +8,46 @@ button {
     --blue-shadow: #b8c7e0;
 }
 
+#revealButton {
+    font-size: 13px;
+    height: 25px;
+    width: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d4cedf;
+    border: 2px solid #745999;
+}
+
+#revealButton:before {
+    background: #a896c2;
+    box-shadow: 0 0 0 2px #745999, 0 0.625em 0 0 #beaed5;
+}
+
+#revealButton:hover {
+    background: #e1d7f3;
+}
+
+#revealButton:hover::before {
+    box-shadow: 0 0 0 2px #745999, 0 0.625em 0 0 #beaed5;
+}
+
+#revealButton:active {
+    background: #d4cedf;
+}
+
+#revealButton:active::before {
+    box-shadow: 0 0 0 2px #745999, 0 0 #a896c2;
+}
+
+
 .button {
     font-family: 'VT323', monospace;
     font-size: 18px;
     color: black;
+    display: flex;
     justify-content: center;
+    align-items: center;
     height: 75px;
     width: 175px;
     margin: 20px;
@@ -20,7 +55,7 @@ button {
     text-transform: uppercase;
     padding: 1.25em 2em;
     background: var(--light-blue);
-    border: 2px solid #1576cf;
+    border: 2px solid var(--blue-border);
     border-radius: 0.5em;
     transform-style: preserve-3d;
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1);
